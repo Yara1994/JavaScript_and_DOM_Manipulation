@@ -56,32 +56,25 @@ button.on("click", function() {
     var inputValueShape = inputElementShape.property("value");
     // console.log(inputValueShape);
 
-
-    var filteredDatetime = tableData.filter(ufo => ufo.datetime === inputValueDatetime)
-    var filteredCity = tableData.filter(ufo => ufo.city === inputValueCity)
-    var filteredState = tableData.filter(ufo => ufo.state === inputValueState)
-    var filteredCountry = tableData.filter(ufo => ufo.country === inputValueCountry)
-    var filteredShape = tableData.filter(ufo => ufo.shape === inputValueShape)
-
     if(Boolean(inputValueDatetime)) {
-        tableData = filteredDatetime
+        tableData = tableData.filter(ufo => ufo.datetime === inputValueDatetime)
     }
-    tbody.html(" ")
 
     if(Boolean(inputValueCity)) {
-        tableData = filteredCity
+        tableData = tableData.filter(ufo => ufo.city === inputValueCity)
     }
-    tbody.html(" ")
+    
     if(Boolean(inputValueState)) {
-        tableData = filteredState
+        tableData = tableData.filter(ufo => ufo.state === inputValueState)
     }
-    tbody.html(" ")
+    
     if(Boolean(inputValueCountry)) {
-        tableData = filteredCountry
+        tableData = tableData.filter(ufo => ufo.country === inputValueCountry)
     }
-    tbody.html(" ")
+    
     if(Boolean(inputValueShape)) {
-        tableData = filteredShape
+        tableData = tableData.filter(ufo => ufo.shape === inputValueShape)
+
     } 
 
 
@@ -101,7 +94,7 @@ button.on("click", function() {
     
     });
 
-    populate(tableData)
+    tableData = data
 
 });
 
